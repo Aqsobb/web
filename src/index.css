@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff6b35;
+  --color-primary-dark: #e55a2b;
+  --color-secondary: #004e89;
+  --color-accent: #1a659e;
+  --color-dark-900: #0a0a0f;
+  --color-dark-800: #12121a;
+  --color-dark-700: #1a1a2e;
+  --color-dark-600: #232340;
+  --color-dark-500: #2d2d50;
+  --color-surface: #16162a;
+  --color-surface-light: #1e1e3a;
+  --color-muted: #6b7280;
+  --color-text-primary: #f1f1f1;
+  --color-text-secondary: #a0a0b8;
+  --font-heading: "Inter", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-dark-500) transparent;
+  }
+
+  body {
+    @apply bg-dark-900 text-text-primary font-body antialiased;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(0, 78, 137, 0.05) 0%, transparent 50%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-dark-500);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted);
+  }
+}
+
+@layer components {
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.15);
+  }
+
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 107, 53, 0.1);
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(to top, rgba(10, 10, 15, 0.95) 0%, rgba(10, 10, 15, 0.6) 40%, transparent 100%);
+  }
+
+  .gradient-overlay-right {
+    background: linear-gradient(to right, rgba(10, 10, 15, 0.95) 0%, rgba(10, 10, 15, 0.4) 50%, transparent 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #ff6b35, #ff8c42, #ffb347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-effect {
+    background: rgba(26, 26, 46, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}

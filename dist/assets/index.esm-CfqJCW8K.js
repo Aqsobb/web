@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index.esm-BLCsi-eX.js";t(`firebase`,`12.15.0`,`app`);export{e as initializeApp};
